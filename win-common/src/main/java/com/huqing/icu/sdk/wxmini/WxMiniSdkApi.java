@@ -45,7 +45,8 @@ public class WxMiniSdkApi {
         paramsMap.put("js_code", jsCode);
         paramsMap.put("grant_type", grantType);
         try {
-            httpUtils.sendGet(wxMiniSdkConfig.getWxMiniLoginUrl(), paramsMap);
+            String response = httpUtils.sendGet(wxMiniSdkConfig.getWxMiniLoginUrl(), paramsMap);
+            System.out.println(response);
         } catch (BusinessException e) {
             throw new BusinessException(e.getCode(), e.getMsg());
         } catch (Exception e) {
